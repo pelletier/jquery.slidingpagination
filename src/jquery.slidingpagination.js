@@ -176,7 +176,7 @@
 
             widget.find(".slider").animate({
                 left: '0px'
-            }, 8000, function(){
+            }, 800, function(){
                 var l = final_nums.length;
                 $($(this).find('.gopage').slice(-l)).each(function(){
                     $(this).remove();
