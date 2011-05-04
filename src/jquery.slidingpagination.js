@@ -116,6 +116,10 @@
 
         goless: function(){
             var widget = $(this).parent();
+            if (widget.hasClass("animating")) {
+                return true;
+            }
+            widget.addClass("animating");
 
             /* Grab the stored data for our widget */
             var data = widget.data('slidingpagination');
@@ -181,11 +185,16 @@
                 $($(this).find('.gopage').slice(-l)).each(function(){
                     $(this).remove();
                 });
+                widget.removeClass("animating");
             });
         },
 
         gomore: function(){
             var widget = $(this).parent();
+            if (widget.hasClass("animating")) {
+                return true;
+            }
+            widget.addClass("animating");
 
             /* Grab the stored data for our widget */
             var data = widget.data('slidingpagination');
@@ -203,8 +212,6 @@
                     final_nums.push(n_numbers[v]);
                 }
             }
-
-            console.log(final_nums);
 
             if (final_nums.length == 0) {
                 return true;
@@ -235,12 +242,9 @@
             
             /* Grab the final size of the box */
             var normal_size = widget.find('.slider').width();
-            console.log(normal_size);
-            console.log(current_size);
 
             /* Compute the difference */
             var diff = Math.abs(normal_size - current_size);
-            console.log(diff);
 
             /* Put the new pages to the left */
             widget.find('.slider').css('left', '0px');
@@ -257,6 +261,7 @@
                     $(this).remove();
                 });
                 widget.find(".slider").css("left", "0px");
+                widget.removeClass("animating");
             });
             
         }
