@@ -1,0 +1,59 @@
+<html>
+    <head>
+        <title>Pagination mock</title>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
+        <script src="ttps://github.com/janl/mustache.js/raw/30e80778f479a17d879b99e3246d125cadacc96d/mustache.js"></script>
+        <script src="mock-pagination.js"></script>
+
+        <style type="text/css" media="screen">
+
+            body {
+                font-family: verdana, arial, sansserif;
+                text-align: center;
+                min-width: 1000px;
+                padding-top: 100px;
+            }
+
+            #wrapper {
+                text-align: left;
+                width: 1000px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            
+
+            #paging {
+                display: inline-block;
+                padding: 4px;
+            }
+
+            .current {
+                color: red;
+            }
+
+            #paging a {
+                text-decoration: none;
+                margin-right: 4px;
+            }
+            
+        </style>
+    </head>
+    <body>
+        <div id="#wrapper">
+            <div id="paging">Pagination</div>
+        </div>
+
+        <script type="text/javascript">
+            $(document).ready(function() {
+                var current = 6;
+                var max = 96;
+
+                $("#paging").slidingPagination({
+                    'current': current,
+                    'max': max,
+                });
+            });
+        </script>
+
+    </body>
+</html>
