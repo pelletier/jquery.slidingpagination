@@ -2,6 +2,10 @@
 
 A simple slide-based pagination plugin for jQuery.
 
+## Live on jsfiddle
+
+[See it live](http://jsfiddle.net/pelletier/gNBVv/1/)
+
 
 ## Requirements
 
